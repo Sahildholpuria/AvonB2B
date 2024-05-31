@@ -28,7 +28,7 @@ public class AvonLogin {
 
     }
 
-    @Test(priority = 1)
+    @Test
     public void verifyTitle()
     {
         String actualTitle = driver.getTitle();
@@ -38,13 +38,20 @@ public class AvonLogin {
     }
 
 
-    @Test(priority = 2)
+    @Test
     public void validCradentialLogin()
     {
         driver.findElement(By.xpath("//*[@id=\"input-26\"]")).sendKeys(emailAddress);
         driver.findElement(By.xpath("//*[@id=\"input-28\"]")).sendKeys(Password);
         driver.findElement(By.xpath("//*[@id=\"main\"]/webruntime-app/lwr-router-container/webruntime-inner-app/dxp_data_provider-user-record-data-provider/dxp_data_provider-data-proxy/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/b2c_lite_commerce-external-layout/webruntime-router-container/dxp_data_provider-user-record-data-provider/dxp_data_provider-data-proxy/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/community_layout-slds-flexible-layout/div/community_layout-section/div[3]/community_layout-column/div/community_login-login-form/div/div[1]/div/button")).click();
 
+    }
+
+    @Test
+    public void verifyLogo()
+    {
+        boolean flag = driver.findElement(By.xpath("//*[@id=\"main\"]/webruntime-app/lwr-router-container/webruntime-inner-app/dxp_data_provider-user-record-data-provider/dxp_data_provider-data-proxy/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/b2c_lite_commerce-external-layout/webruntime-router-container/dxp_data_provider-user-record-data-provider/dxp_data_provider-data-proxy/dxp_data_provider-user-data-provider/dxp_data_provider-data-proxy/community_layout-slds-flexible-layout/div/community_layout-section/div[3]/community_layout-column/div/dxp_content_layout-site-logo/a/div")).isDisplayed();
+        Assert.assertTrue(flag);
     }
 
     @AfterMethod
