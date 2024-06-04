@@ -32,7 +32,7 @@ public class AvonLogin {
     public void verifyTitle()
     {
         String actualTitle = driver.getTitle();
-        String expectedTitle = "Logn";
+        String expectedTitle = "Login";
 
         Assert.assertEquals(actualTitle,expectedTitle);
     }
